@@ -35,3 +35,12 @@ sed -i 's/^\(.*requiretty\)$/#\1/' /etc/sudoers
 if grep -q -E "^mesg n$" /root/.profile && sed -i "s/^mesg n$/tty -s \\&\\& mesg n/g" /root/.profile; then
   echo '==> Fixed stdin not being a tty.'
 fi
+
+echo "[InputSource0]
+xkb=us
+
+[User]
+XSession=pantheon
+SystemAccount=true" > /var/lib/AccountsService/users/vagrant
+chown root:root /var/lib/AccountsService/users/vagrant
+chmod 644 /var/lib/AccountsService/users/vagrant

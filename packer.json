@@ -65,7 +65,8 @@
       "execute_command": "echo '{{ user `ssh_password` }}' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
       "scripts": [
         "script/apt.sh",
-        "script/sshd.sh"
+        "script/sshd.sh",
+        "script/user.sh"
       ],
       "type": "shell"
     },
